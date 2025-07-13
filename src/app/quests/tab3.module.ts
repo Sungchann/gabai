@@ -8,6 +8,7 @@ import { CategoryComponent } from '../shared/component/category/category.compone
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
 import { QuestComponent } from "../shared/component/quest/quest.component";
+import { ProgressComponent } from "../shared/component/progress/progress.component";
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { QuestComponent } from "../shared/component/quest/quest.component";
     ExploreContainerComponentModule,
     Tab3PageRoutingModule,
     CategoryComponent,
-    QuestComponent
+    QuestComponent,
+    ProgressComponent
 ],
   declarations: [Tab3Page]
 })

@@ -1,7 +1,9 @@
 <ion-content [fullscreen]="true">
   <div class="header-container">
     <div class="page-title">
-      <ion-icon name="gift-outline" class="icon" size="large"></ion-icon>
+      <div class="icon-circle">
+        <ion-icon name="gift-outline" class="icon" size="large"></ion-icon>
+      </div>
       <div class="texts">
         <div class="title">Gift Quests</div>
         <div class="subtitle">Share your amazing talents!</div>
@@ -11,8 +13,8 @@
   <div class="parent-container">
     <app-category class="categories"></app-category>
   </div>
-  <div class="">
-
+  <div class="progress-container">
+    <app-progress></app-progress>
   </div>
   <div class="available-quest">
     <div class="title">
