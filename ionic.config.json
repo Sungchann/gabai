@@ -1,0 +1,7 @@
+{
+  "name": "gabai-prototype",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
