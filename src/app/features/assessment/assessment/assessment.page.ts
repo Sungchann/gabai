@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-assessment',
   templateUrl: './assessment.page.html',
   styleUrls: ['./assessment.page.scss'],
+  standalone: false
 })
 export class AssessmentPage implements OnInit {
 
