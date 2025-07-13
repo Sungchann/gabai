@@ -1,13 +1,25 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content [fullscreen]="true">
+  <div class="header-container">
+    <div class="page-title">
+      <ion-icon name="gift-outline" class="icon" size="large"></ion-icon>
+      <div class="texts">
+        <div class="title">Gift Quests</div>
+        <div class="subtitle">Share your amazing talents!</div>
+      </div>
+    </div>
+  </div>
   <div class="parent-container">
     <app-category class="categories"></app-category>
+  </div>
+  <div class="">
+
+  </div>
+  <div class="available-quest">
+    <div class="title">
+      <h2>Available Quest</h2>
+    </div>
+  </div>
+  <div class="quest-container">
+    <app-quest></app-quest>
   </div>
 </ion-content>

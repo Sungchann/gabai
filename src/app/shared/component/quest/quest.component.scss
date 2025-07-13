@@ -1,0 +1,104 @@
+.quest {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 12px;  
+    margin-bottom: 16px;
+    overflow: hidden;
+    border-width: 1px 1px 5px 1px; 
+    border-style: solid;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    height: 100%;
+
+    .star {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+        img{
+            width: 55px; 
+            height: 55px; 
+        }
+    }
+
+    .details {
+      flex: 1;
+      overflow: hidden; 
+      
+      .task {
+        font-size: 16px; /* Slightly smaller for better fit */
+        font-weight: 600;
+        color: #FFFFFF;
+        margin-bottom: 2px;
+        white-space: normal; /* Changed from nowrap to normal to allow wrapping */
+        overflow: hidden;
+        line-height: 1.3;
+        max-height: 42px; /* Increased to allow for two lines of text */
+        display: -webkit-box;
+        -webkit-line-clamp: 2; /* Limit to 2 lines max */
+        line-clamp: 2; /* Standard property for compatibility */
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+      }
+
+      .task-content {
+        font-size: 14px;
+        color: #FFFFFF;
+        margin-bottom: 4px; 
+        line-height: 1.4; 
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2; /* Standard property for compatibility */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-height: 40px;
+      }
+
+      .time-points {
+        font-size: 14px; 
+        font-weight: bold;
+        color: #FFFFFF;
+        line-height: 1.2;
+        max-height: 16px;
+      }
+    }
+
+    .go-button {
+      max-width: 74px;
+      max-height: 42px;
+      width: 74px;
+      height: 42px;
+      background-color: #FFFFFF;
+      border-radius: 10px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: background-color 0.2s ease;
+      margin-right: 5px;
+      border-width: 1px 1px 5px 1px;
+      border-color: #CACACA;
+      border-style: solid; 
+
+      p{
+        color: black;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+    }
+  }
+}
