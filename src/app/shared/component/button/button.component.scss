@@ -1,0 +1,60 @@
+
+button:hover {
+    filter: brightness(0.9);
+
+}
+
+.blue {
+    background-color: #1FA7E1;
+    border-bottom: #1887B6 solid 6px;
+    border-radius: 10px;
+}
+
+.green {
+    background-color: #7ECC71;
+    border-bottom: #6AAB5F solid 6px;
+    border-radius: 10px;
+}
+
+.purple {
+    background-color: #7274ED;
+    border-bottom: #5051A9 solid 6px;
+    border-radius: 10px;
+}
+
+.red {
+    background-color: #FF8B8B;
+    border-bottom: #a84848 solid 6px;
+    border-radius: 10px;
+}
+
+.orange {
+    background-color: #FFB256;
+    border-bottom: #c97633 solid 6px;
+    border-radius: 10px;
+}
+
+.white {
+    background-color: #FFFFFF;
+    border-bottom: #E5E5E5 solid 6px;
+    border-radius: 10px;
+}
+
+.small {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem; /* Tailwind's text-sm */
+}
+
+.medium {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem; /* Tailwind's text-base */
+}
+
+.large {
+    padding: 1rem 2rem;
+    font-size: 1.125rem; /* Tailwind's text-lg */
+}
+
+.text-white{
+    color: white;
+}
