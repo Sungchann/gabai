@@ -10,9 +10,21 @@ export class AssessmentService {
     {
       title: 'Personal Information',
       fields: [
-        { name: 'first_name', label: 'What is your first name?', type: 'text', placeholder: 'Beniz' },
-        { name: 'last_name', label: 'What is your last name?', type: 'text', placeholder: 'Wowow' },
-        { name: 'age', label: 'How old are you?', type: 'number', placeholder: '21' },
+        { name: 'first_name', 
+          label: 'What is your first name?', 
+          type: 'text', 
+          placeholder: 'Beniz' 
+        },
+        { name: 'last_name', 
+          label: 'What is your last name?', 
+          type: 'text', 
+          placeholder: 'Wowow' 
+        },
+        { name: 'age', 
+          label: 'How old are you?', 
+          type: 'number', 
+          placeholder: '10' 
+        },
         {
           name: 'gender',
           label: 'What is your gender?',
