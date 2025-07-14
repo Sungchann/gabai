@@ -1,5 +1,22 @@
 <ion-content [fullscreen]="true">
+
+  <app-family-leaderboard [familyKey]="'QUJ123'"></app-family-leaderboard>
+
+  <div class="mood-chart-container">
+    <h2>This Week's Mood Trend</h2>
+    <div class="mood-bar-graph">
+      <div class="bar-column" *ngFor="let day of moodScores">
+        <div class="bar-wrapper">
+          <div class="bar-fill" [style.height.%]="day.score * 10" [style.backgroundColor]="getMoodColor(day.score)">
+          </div>
+        </div>
+        <p class="bar-label">{{ day.day }}</p>
+      </div>
+    </div>
+  </div>
+
   <div class="reminders-container">
     <app-reminders></app-reminders>
   </div>
+
 </ion-content>

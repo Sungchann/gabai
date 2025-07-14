@@ -5,8 +5,10 @@ import { FormsModule } from '@angular/forms';
 import { Tab5Page } from './tab5.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
+
 import { Tab5PageRoutingModule } from './tab5-routing.module';
 import { RemindersComponent } from "../shared/component/reminders/reminders.component";
+import { FamilyLeaderboardComponent } from '../shared/component/family-leaderboard/family-leaderboard.component';
 
 @NgModule({
   imports: [
@@ -15,7 +17,8 @@ import { RemindersComponent } from "../shared/component/reminders/reminders.comp
     FormsModule,
     ExploreContainerComponentModule,
     Tab5PageRoutingModule,
-    RemindersComponent
+    RemindersComponent,
+    FamilyLeaderboardComponent
 ],
   declarations: [Tab5Page]
 })

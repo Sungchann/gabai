@@ -1,0 +1,70 @@
+.family-leaderboard {
+  padding: 24px;
+  background-color: #f8f9fb;
+
+  .header {
+    font-size: 22px;
+    font-weight: bold;
+    color: #1FA7E1;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .member-list-container {
+    margin-bottom: 16px;
+  }
+
+  .member-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease;
+    gap: 16px;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    }
+
+    .icon {
+      font-size: 36px;
+      background: #eaf7ff;
+      padding: 10px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 50px;
+      height: 50px;
+      text-align: center;
+    }
+
+    .member-information-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      p {
+        margin: 2px 0;
+        font-size: 15px;
+        color: #333;
+        font-weight: 500;
+      }
+    }
+
+    .member-status-section {
+      text-align: right;
+
+      p {
+        margin: 2px 0;
+        font-size: 14px;
+        color: #666;
+      }
+    }
+  }
+}

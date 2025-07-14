@@ -1,0 +1,16 @@
+<div class="family-leaderboard">
+  <p class="header">Family Wellness Today</p>
+  <div class="member-list-container" *ngFor="let member of members">
+    <div class="member-card">
+      <div class="icon">{{ member.emoji }}</div>
+      <div class="member-information-section">
+        <p>{{ member.firstName }} {{ member.lastName }}</p>
+        <p>Age {{ member.age }}</p>
+      </div>
+      <div class="member-status-section">
+        <p>{{ member.screenHours }}</p>
+        <p>{{ member.numActivity }}</p>
+      </div>
+    </div>
+  </div>
+</div>
