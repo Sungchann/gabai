@@ -4,7 +4,6 @@ ion-content {
 }
 
 .available-rewards{
-    border: 1px solid red;
     padding: 0 20px;
     h2{
         font-weight: bold;
@@ -16,4 +15,8 @@ ion-content {
 .reminders-container{
     padding: 0 20px;
     margin-bottom: 20px;
+}
+
+.redeem-container{
+    padding: 0 5px;
 }
