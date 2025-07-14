@@ -8,8 +8,9 @@ export interface RedeemItem {
   points: number;
   color: string;
   border: string;
+  tag: string;
+  redeemed?: boolean; // Optional field
 }
-
 @Injectable({
   providedIn: 'root'
 })
@@ -22,7 +23,8 @@ export class RedeemPointsService {
       description: 'Choose the next family movie and get cozy',
       points: 100,
       color: '#9956DE',
-      border: '#6e2baf'
+      border: '#6e2baf',
+      tag: 'family'
     },
     {
       id: 2,
@@ -30,8 +32,9 @@ export class RedeemPointsService {
       title: 'Artwork in Hall of Fame',
       description: 'Display your latest creation on the family fridge with a special frame!',
       points: 50,
-      color: '#1FA7E1', 
-      border: '#1083b4'
+      color: '#1FA7E1',
+      border: '#1083b4',
+      tag: 'recognition'
     },
     {
       id: 3,
@@ -39,8 +42,9 @@ export class RedeemPointsService {
       title: 'Extra 30 Minutes Before Bed',
       description: 'Stay up a little later to read or play quietly',
       points: 75,
-      color: '#2cafae', 
-      border: '#1b807d'
+      color: '#2cafae',
+      border: '#1b807d',
+      tag: 'privileges'
     },
     {
       id: 4,
@@ -48,8 +52,9 @@ export class RedeemPointsService {
       title: 'Special One-on-One Time',
       description: 'Spend quality time doing your favorite activity with mom or dad',
       points: 150,
-      color: '#75D06A', 
-      border: '#38ac3f'
+      color: '#75D06A',
+      border: '#38ac3f',
+      tag: 'family'
     },
     {
       id: 5,
@@ -58,7 +63,8 @@ export class RedeemPointsService {
       description: 'Pick what the whole family eats for breakfast!',
       points: 30,
       color: '#FFB356',
-      border: '#df832d'
+      border: '#df832d',
+      tag: 'choice'
     },
     {
       id: 6,
@@ -66,8 +72,9 @@ export class RedeemPointsService {
       title: 'Lola/Lolo Video Call',
       description: 'Schedule a special video call to share your recent adventures',
       points: 40,
-      color: '#FF8B8B', 
-      border: '#dc6969'
+      color: '#FF8B8B',
+      border: '#dc6969',
+      tag: 'connections'
     },
     {
       id: 7,
@@ -76,7 +83,8 @@ export class RedeemPointsService {
       description: 'Choose the next family board game or card game',
       points: 80,
       color: '#9956DE',
-      border: '#6e2baf'
+      border: '#6e2baf',
+      tag: 'family'
     },
     {
       id: 8,
@@ -84,8 +92,9 @@ export class RedeemPointsService {
       title: 'Helper of the Day Badge',
       description: 'Get special recognition and a small chore-free day',
       points: 60,
-      color: '#1FA7E1', 
-      border: '#1083b4'
+      color: '#1FA7E1',
+      border: '#1083b4',
+      tag: 'recognition'
     }
   ];
 

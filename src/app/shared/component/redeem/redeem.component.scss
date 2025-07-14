@@ -134,3 +134,29 @@
       padding: 8px 12px; 
     }
   }
+
+
+  .redeem-button {
+  padding: 6px 12px;
+  background-color: #1FA7E1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.redeem-button:hover:not(:disabled) {
+  background-color: #178fc0;
+}
+
+.redeem-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.reward-card.redeemed {
+  opacity: 0.7; 
+  pointer-events: none; 
+  transition: opacity 0.3s ease;
+}

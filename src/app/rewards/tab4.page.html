@@ -4,8 +4,15 @@
       <h2>Available Rewards</h2>
     </div>
   </div>
+  <div class="reward-grid">
+    <div class="reward-card" *ngFor="let reward of rewards" (click)="selectReward(reward)"
+      [ngClass]="{ 'active': selectedReward === reward }">
+      <ion-icon [name]="reward.icon"></ion-icon>
+      <p>{{ reward.label }}</p>
+    </div>
+  </div>
   <div class="redeem-container">
-    <app-redeem></app-redeem>
+    <app-redeem [filterTag]="selectedRewardTag"></app-redeem>
   </div>
   <div class="reminders-container">
     <app-reminders></app-reminders>

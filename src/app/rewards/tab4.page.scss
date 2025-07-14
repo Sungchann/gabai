@@ -3,20 +3,80 @@ ion-content {
     --background: white;
 }
 
-.available-rewards{
+.available-rewards {
     padding: 0 20px;
-    h2{
+
+    h2 {
         font-weight: bold;
         font-size: 18px;
         color: black;
     }
 }
 
-.reminders-container{
+.reminders-container {
     padding: 0 20px;
     margin-bottom: 20px;
 }
 
-.redeem-container{
+.redeem-container {
     padding: 0 5px;
+}
+
+.reward-options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+}
+
+.reward-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+  gap: 16px;
+  padding: 12px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.reward-card {
+  height: 120px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.reward-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(28, 91, 122, 0.15);
+}
+
+.reward-card.active {
+  background-color: #1FA7E1;
+
+  ion-icon,
+  p {
+    color: white;
+  }
+}
+
+.reward-card ion-icon {
+  font-size: 32px;
+  color: #1C5B7A;
+  margin-bottom: 8px;
+}
+
+.reward-card p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }

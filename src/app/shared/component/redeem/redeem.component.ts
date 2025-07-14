@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, SimpleChanges, OnChanges } from '@angular/core';
 import { RedeemPointsService, RedeemItem } from '../../../services/redeem-points.service';
 import { CommonModule } from '@angular/common';
 
@@ -8,20 +8,35 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./redeem.component.scss'],
   imports: [CommonModule]
 })
-export class RedeemComponent implements OnInit {
+export class RedeemComponent implements OnInit, OnChanges {
+  @Input() filterTag: string = 'all';
+
   redeemItems: RedeemItem[] = [];
-  
+  filteredItems: RedeemItem[] = [];
+
   constructor(private redeemPointsService: RedeemPointsService) { }
-  
+
   ngOnInit(): void {
-    // Get all redeem items from service
     this.redeemItems = this.redeemPointsService.getRedeemItems();
+    this.applyFilter();
   }
-  
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['filterTag']) {
+      this.applyFilter();
+    }
+  }
+
+  applyFilter(): void {
+    if (this.filterTag === 'all') {
+      this.filteredItems = this.redeemItems;
+    } else {
+      this.filteredItems = this.redeemItems.filter(item => item.tag === this.filterTag);
+    }
+  }
+
   redeemReward(item: RedeemItem): void {
-    // Implement redemption logic
     console.log(`Redeeming: ${item.title} for ${item.points} points`);
-    // Here you would check if user has enough points,
-    // then process the redemption and update points balance
+    item.redeemed = true; // Mark as redeemed
   }
 }
