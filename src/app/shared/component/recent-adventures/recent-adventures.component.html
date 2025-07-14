@@ -1,0 +1,15 @@
+<div class="recent-container">
+  <div class="recent-header">Recent Adventures</div>
+  <div class="recent-adventures">
+    <div class="adventure-item" *ngFor="let adventure of recentAdventures">
+      <div class="adventure-info">
+        <div class="icon">{{ adventure.emoji }}</div>
+        <div class="adventure-details">
+          <div class="adventure-title">{{ adventure.title }}</div>
+          <div class="adventure-date">{{ getTimeAgo(adventure.date) }}</div>
+        </div>
+      </div>
+      <div class="adventure-points">+{{ adventure.points }}</div>
+    </div>
+  </div>
+</div>

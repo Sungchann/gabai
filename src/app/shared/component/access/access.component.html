@@ -1,0 +1,11 @@
+<div class="access-container">
+    <div class="access-buttons">
+        <ng-container  *ngFor="let button of accessButtons">
+            <button ion-button (click)="navigateTo(button.route)" [style.backgroundColor]="button.color" [style.borderColor]="button.border">
+                <ion-icon class="button-icon" [name]="button.icon"></ion-icon>
+                <p class="button-name">{{ button.name }}</p>
+                <p class="button-message">{{ button.subname }}</p>
+            </button>
+        </ng-container>
+    </div>
+</div>
