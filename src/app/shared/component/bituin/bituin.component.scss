@@ -1,0 +1,17 @@
+.header-stars {
+    background-color: #fee599b1;
+    border-radius: 15px;
+    color: #ca541d;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stars {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 700;
+    font-size: 18px     ;
+}

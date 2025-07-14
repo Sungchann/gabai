@@ -11,7 +11,7 @@ import { AccessComponent } from 'src/app/shared/component/access/access.componen
 import { RecentAdventuresComponent } from 'src/app/shared/component/recent-adventures/recent-adventures.component';
 // import { MoodTrackerComponent } from '../shared/component/mood-tracker/mood-tracker.component';
 import { MoodTrackerComponent } from 'src/app/shared/component/mood-tracker/mood-tracker.component';
-
+import { BituinComponent } from 'src/app/shared/component/bituin/bituin.component';
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 
 @NgModule({
@@ -23,7 +23,8 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     Tab1PageRoutingModule,
     AccessComponent,
     RecentAdventuresComponent,
-    MoodTrackerComponent
+    MoodTrackerComponent,
+    BituinComponent
   ],
   declarations: [Tab1Page]
 })

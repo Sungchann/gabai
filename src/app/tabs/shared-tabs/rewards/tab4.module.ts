@@ -17,6 +17,10 @@ import { RedeemComponent } from 'src/app/shared/component/redeem/redeem.componen
 // import { RemindersComponent } from "../shared/component/reminders/reminders.component";
 import { RemindersComponent } from 'src/app/shared/component/reminders/reminders.component';
 
+import { BituinComponent } from 'src/app/shared/component/bituin/bituin.component';
+
+import { WishlistFormComponent } from 'src/app/shared/component/wishlist-form/wishlist-form.component';
+
 @NgModule({
   imports: [
     IonicModule,
@@ -26,7 +30,9 @@ import { RemindersComponent } from 'src/app/shared/component/reminders/reminders
     Tab4PageRoutingModule,
     MoodTrackerComponent,
     RedeemComponent,
-    RemindersComponent
+    RemindersComponent,
+    BituinComponent,
+    WishlistFormComponent
 ],
   declarations: [Tab4Page]
 })
