@@ -8,6 +8,7 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { Tab4PageRoutingModule } from './tab4-routing.module';
 import { MoodTrackerComponent } from "../shared/component/mood-tracker/mood-tracker.component";
 import { RedeemComponent } from "../shared/component/redeem/redeem.component";
+import { RemindersComponent } from "../shared/component/reminders/reminders.component";
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { RedeemComponent } from "../shared/component/redeem/redeem.component";
     ExploreContainerComponentModule,
     Tab4PageRoutingModule,
     MoodTrackerComponent,
-    RedeemComponent
+    RedeemComponent,
+    RemindersComponent
 ],
   declarations: [Tab4Page]
 })
