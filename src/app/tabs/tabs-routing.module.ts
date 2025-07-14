@@ -9,23 +9,23 @@ const routes: Routes = [
     children: [
       {
         path: 'tab1',
-        loadChildren: () => import('../home/tab1.module').then(m => m.Tab1PageModule)
+        loadChildren: () => import('./shared-tabs/home/tab1.module').then(m => m.Tab1PageModule)
       },
       {
         path: 'tab2',
-        loadChildren: () => import('../badges/tab2.module').then(m => m.Tab2PageModule)
+        loadChildren: () => import('./children-tabs/badges/tab2.module').then(m => m.Tab2PageModule)
       },
       {
         path: 'tab3',
-        loadChildren: () => import('../quests/tab3.module').then(m => m.Tab3PageModule)
+        loadChildren: () => import('./children-tabs/quests/tab3.module').then(m => m.Tab3PageModule)
       },
       {
         path: 'tab4',
-        loadChildren: () => import('../rewards/tab4.module').then(m => m.Tab4PageModule)
+        loadChildren: () => import('./shared-tabs/rewards/tab4.module').then(m => m.Tab4PageModule)
       },
       {
         path: 'tab5',
-        loadChildren: () => import('../family/tab5.module').then(m => m.Tab5PageModule)
+        loadChildren: () => import('./shared-tabs/family/tab5.module').then(m => m.Tab5PageModule)
       },
       {
         path: '',

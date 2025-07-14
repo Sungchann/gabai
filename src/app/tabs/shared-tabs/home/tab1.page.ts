@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { MoodTrackerComponent } from '../shared/component/mood-tracker/mood-tracker.component';
+// import { MoodTrackerComponent } from '../shared/component/mood-tracker/mood-tracker.component';
+import { MoodTrackerComponent } from 'src/app/shared/component/mood-tracker/mood-tracker.component';
 
 @Component({
   selector: 'app-tab1',
