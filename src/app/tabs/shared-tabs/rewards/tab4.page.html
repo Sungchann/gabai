@@ -30,21 +30,18 @@
       <h5>Wishlist Corner</h5>
     </div>
     <div class="wishlist-carousel-container">
-      <div class="wishlist-carousel" #carousel>
-        <div class="carousel-item" 
-             *ngFor="let voucher of wishlistVouchers; let i = index" 
-             [class.active]="i === activeIndex"
-             (click)="onVoucherClick(voucher)">
-          <p>{{ voucher.message }}</p>
+      <div class="swiper" #swiperContainer>
+        <div class="swiper-wrapper">
+          <div 
+            class="swiper-slide"
+            *ngFor="let voucher of wishlistVouchers"
+            (click)="onVoucherClick(voucher)">
+            <div class="carousel-item">
+              <p>{{ voucher.message }}</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="carousel-indicators">
-        <span 
-          *ngFor="let voucher of wishlistVouchers; let i = index" 
-          class="indicator"
-          [class.active]="i === activeIndex"
-          (click)="activeIndex = i">
-        </span>
+        <div class="swiper-pagination"></div>
       </div>
     </div>
   </div>
