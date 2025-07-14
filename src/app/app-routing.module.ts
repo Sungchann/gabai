@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'get-started',
     loadChildren: () => import('./features/get-started/get-started.module').then( m => m.GetStartedPageModule)
+  },
+  {
+    path: 'loading-test',
+    loadComponent: () => import('./shared/component/loading-screen/loading-screen.component').then(c => c.LoadingScreenComponent)
   }
 ];
 @NgModule({
