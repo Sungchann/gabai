@@ -1,3 +1,16 @@
-<p>
-  input-form works!
-</p>
+<div class="input-container">
+  <label class="label">{{ label }}</label>
+  <input
+    *ngIf="type !== 'select'"
+    class="input-form"
+    [type]="type"
+    [placeholder]="placeholder"
+    [value]="value"
+    (input)="onValueChange($event)"
+  />
+
+  <select *ngIf="type === 'select'" class="select-form" [value]="value" (change)="onValueChange($event)">
+    <option disabled selected hidden class="input-option">{{ placeholder }}</option>
+    <option *ngFor="let option of options" [value]="option" class="input-option">{{ option }}</option>
+  </select>
+</div>
