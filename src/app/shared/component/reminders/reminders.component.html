@@ -1,0 +1,11 @@
+<div class="reminder-container" *ngIf="reminder">
+  <div class="icon-circle" [style.background-color]="reminder.background">
+    <ion-icon [name]="reminder.icon"></ion-icon>
+  </div>
+  <div class="reminder-title">
+    {{ reminder.title }}
+  </div>
+  <div class="reminder-description">
+    {{ reminder.message }} {{ reminder.emoji }}
+  </div>
+</div>

@@ -7,6 +7,9 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 import { CategoryComponent } from '../shared/component/category/category.component';
 
 import { Tab3PageRoutingModule } from './tab3-routing.module';
+import { QuestComponent } from "../shared/component/quest/quest.component";
+import { ProgressComponent } from "../shared/component/progress/progress.component";
+import { RemindersComponent } from "../shared/component/reminders/reminders.component";
 
 @NgModule({
   imports: [
@@ -15,8 +18,11 @@ import { Tab3PageRoutingModule } from './tab3-routing.module';
     FormsModule,
     ExploreContainerComponentModule,
     Tab3PageRoutingModule,
-    CategoryComponent
-  ],
+    CategoryComponent,
+    QuestComponent,
+    ProgressComponent,
+    RemindersComponent
+],
   declarations: [Tab3Page]
 })
 export class Tab3PageModule {}

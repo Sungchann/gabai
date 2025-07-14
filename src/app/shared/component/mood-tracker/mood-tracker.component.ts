@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MoodTrackerService, Mood } from '../../services/mood-tracker.service';
+import { MoodTrackerService, Mood } from '../../../services/mood-tracker.service';
 
 @Component({
   selector: 'app-mood-tracker',

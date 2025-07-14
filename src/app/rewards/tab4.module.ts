@@ -6,6 +6,9 @@ import { Tab4Page } from './tab4.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab4PageRoutingModule } from './tab4-routing.module';
+import { MoodTrackerComponent } from "../shared/component/mood-tracker/mood-tracker.component";
+import { RedeemComponent } from "../shared/component/redeem/redeem.component";
+import { RemindersComponent } from "../shared/component/reminders/reminders.component";
 
 @NgModule({
   imports: [
@@ -13,8 +16,11 @@ import { Tab4PageRoutingModule } from './tab4-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab4PageRoutingModule
-  ],
+    Tab4PageRoutingModule,
+    MoodTrackerComponent,
+    RedeemComponent,
+    RemindersComponent
+],
   declarations: [Tab4Page]
 })
 export class Tab4PageModule {}

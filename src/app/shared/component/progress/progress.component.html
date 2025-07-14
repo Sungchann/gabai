@@ -1,0 +1,19 @@
+<div class="progress-container">
+  <div class="progress-header">
+    <div class="title">Today's Progress</div>
+    <div class="points-wrapper">
+      <div class="points"><i class="far fa-star"></i> {{ progress.pointsEarned }} Points</div>
+    </div>
+  </div>
+  <div class="progress-content">
+    <div class="progress-icon">
+      🏆
+    </div>
+    <div class="progress-details">
+      <div class="completed-quests">{{ progress.completedQuests }} quests completed today</div>
+      <div class="progress-bar-container">
+        <ion-progress-bar [value]="progress.progressPercentage"></ion-progress-bar>
+      </div>
+    </div>  
+  </div>
+</div>

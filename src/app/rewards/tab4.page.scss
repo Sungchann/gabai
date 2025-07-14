@@ -1,0 +1,22 @@
+ion-content {
+    // --background: rgb(207, 253, 204);
+    --background: white;
+}
+
+.available-rewards{
+    padding: 0 20px;
+    h2{
+        font-weight: bold;
+        font-size: 18px;
+        color: black;
+    }
+}
+
+.reminders-container{
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.redeem-container{
+    padding: 0 5px;
+}

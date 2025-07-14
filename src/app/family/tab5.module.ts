@@ -6,6 +6,7 @@ import { Tab5Page } from './tab5.page';
 import { ExploreContainerComponentModule } from '../explore-container/explore-container.module';
 
 import { Tab5PageRoutingModule } from './tab5-routing.module';
+import { RemindersComponent } from "../shared/component/reminders/reminders.component";
 
 @NgModule({
   imports: [
@@ -13,8 +14,9 @@ import { Tab5PageRoutingModule } from './tab5-routing.module';
     CommonModule,
     FormsModule,
     ExploreContainerComponentModule,
-    Tab5PageRoutingModule
-  ],
+    Tab5PageRoutingModule,
+    RemindersComponent
+],
   declarations: [Tab5Page]
 })
 export class Tab5PageModule {}

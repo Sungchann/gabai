@@ -1,0 +1,136 @@
+.rewards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px; 
+    padding: 24px; 
+    width: 100%;
+  }
+  
+  .reward-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 0; 
+    padding: 12px; 
+    border-radius: 25px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    border-width: 1px 1px 5px 1px; 
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    .container {
+      display: flex;
+      padding: 16px; 
+      width: 100%; 
+    }
+    
+    .icon {
+      font-size: 36px; 
+      margin-right: 16px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 60px;
+      width: 60px;  
+      height: 60px; 
+      background-color: rgba(255, 255, 255, 0.3); 
+      border-radius: 8px; 
+      flex-shrink: 0; 
+    }
+    
+    .contents {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; 
+      min-height: 120px; 
+    }
+    
+    .reward-title {
+      font-size: 18px; 
+      font-weight: 700;
+      color: white; 
+      margin-bottom: 8px; 
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      line-height: 1.3; 
+    }
+    
+    .reward-details {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.9); 
+      margin-bottom: 12px;
+      line-height: 1.4; 
+    }
+    
+    .points-redeem {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 8px; 
+    }
+    
+    .points {
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+      padding: 6px 0;
+      white-space: nowrap; 
+      overflow: hidden; 
+      text-overflow: ellipsis;
+    }
+    
+    .redeem-button {
+      background-color: white !important; 
+      color: #8e8b8b; 
+      border-radius: 6px;
+      padding: 8px 14px; 
+      font-weight: 600;
+      cursor: pointer;
+      border-bottom: 3px solid #CACACA; 
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .rewards-container {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      padding: 15px;
+    }
+    
+    .reward-card .container {
+      padding: 15px;
+    }
+    
+    .icon {
+      font-size: 32px;
+      min-width: 50px;
+      width: 50px;  
+      height: 50px; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .rewards-container {
+      grid-template-columns: 1fr;
+      gap: 15px;
+      padding: 10px;
+    }
+    
+    .points-redeem {
+      flex-direction: row; 
+      justify-content: space-between; 
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap; 
+    }
+    
+    .points {
+      min-width: 60px; 
+    }
+    
+    .redeem-button {
+      padding: 8px 12px; 
+    }
+  }
