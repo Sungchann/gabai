@@ -13,7 +13,7 @@ ion-content {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background-color: rgb(24, 135, 182);
+  background-color: rgb(110, 212, 255);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -137,4 +137,8 @@ p {
 
 .mood-tracker-modal ion-content {
     --background: #f8f9fa;
+}
+
+.reminders-container{
+    margin: 20px;
 }
