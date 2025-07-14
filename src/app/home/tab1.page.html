@@ -1,2 +1,34 @@
 <ion-content [fullscreen]="true">
+    <div class="header">
+        <div class="header-content">
+            <div class="logo-circle">
+                <a href="" class="logo-link">
+                    <img [src]="logo" alt="Gabai Logo" class="logo">
+                </a>
+            </div>
+            <div class="header-text">
+                <div>Kamusta</div>
+                <div class="name">Maria! 🌟</div>
+            </div>
+        </div>
+        <div class="header-stars">
+            <ion-icon name="star-outline"></ion-icon>
+            276 Bituin
+        </div>
+    </div>
+    <div class="welcome-container">
+        <div class="icon">
+            🌈
+        </div>
+        <div class="welcome-text">
+            <h5>Welcome back, little star!</h5>
+            <p>Ready for another day of amazing discoveries?</p>
+        </div>
+    </div>
+    <div class="actions-container">
+        <app-access></app-access>
+    </div>
+    <div class="recent-activities-container">
+        <app-recent-adventures></app-recent-adventures>
+    </div>
 </ion-content>

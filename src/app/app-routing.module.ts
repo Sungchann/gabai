@@ -13,6 +13,14 @@ const routes: Routes = [
   {
     path: 'assessment',
     loadChildren: () => import('./features/assessment/assessment/assessment.module').then( m => m.AssessmentPageModule)
+  },
+  {
+    path: 'splash-screen',
+    loadChildren: () => import('./features/splash-screen/splash-screen.module').then( m => m.SplashScreenPageModule)
+  },
+  {
+    path: 'get-started',
+    loadChildren: () => import('./features/get-started/get-started.module').then( m => m.GetStartedPageModule)
   }
 ];
 @NgModule({
