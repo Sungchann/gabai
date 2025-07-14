@@ -40,6 +40,16 @@ export class AssessmentPage implements OnInit {
 
   submitForm() {
     console.log('Form submitted!');
-    console.log(this.formData)
+    this.asessmentService.submitAssessment(this.formData)
+      .subscribe(
+        (response) => {
+          console.log('Prediction results:', response);
+          // Handle the response (e.g., navigate to results page with data)
+        },
+        (error) => {
+          console.error('Error getting prediction:', error);
+          // Handle error (show error message, etc.)
+        }
+      );
   }
 }
