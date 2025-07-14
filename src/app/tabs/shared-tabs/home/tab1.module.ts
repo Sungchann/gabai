@@ -11,7 +11,7 @@ import { AccessComponent } from 'src/app/shared/component/access/access.componen
 import { RecentAdventuresComponent } from 'src/app/shared/component/recent-adventures/recent-adventures.component';
 // import { MoodTrackerComponent } from '../shared/component/mood-tracker/mood-tracker.component';
 import { MoodTrackerComponent } from 'src/app/shared/component/mood-tracker/mood-tracker.component';
-
+import { BituinComponent } from 'src/app/shared/component/bituin/bituin.component';
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { RemindersComponent } from "src/app/shared/component/reminders/reminders.component";
 
@@ -25,8 +25,9 @@ import { RemindersComponent } from "src/app/shared/component/reminders/reminders
     AccessComponent,
     RecentAdventuresComponent,
     MoodTrackerComponent,
+    BituinComponent
     RemindersComponent
-],
+   ],
   declarations: [Tab1Page]
 })
 export class Tab1PageModule {}

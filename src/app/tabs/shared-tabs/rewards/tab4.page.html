@@ -1,20 +1,78 @@
 <ion-content [fullscreen]="true">
-  <div class="available-rewards">
-    <div class="title">
-      <h2>Available Rewards</h2>
+  <div class="header">
+    <div class="rewards-store">
+      <div class="title">
+        <div class="icon"><ion-icon name="star" size="large"></ion-icon></div>
+        <div class="text">
+          <h1>Rewards Store</h1>
+          <p>Grab your bituin points!</p>
+        </div>
+      </div>
+      <app-bituin [bituins]="276"></app-bituin>
     </div>
   </div>
+
   <div class="reward-grid">
-    <div class="reward-card" *ngFor="let reward of rewards" (click)="selectReward(reward)"
-      [ngClass]="{ 'active': selectedReward === reward }">
+    <div
+      class="reward-card"
+      *ngFor="let reward of rewards"
+      (click)="selectReward(reward)"
+      [ngClass]="{ 'active': selectedReward === reward }"
+    >
       <ion-icon [name]="reward.icon"></ion-icon>
       <p>{{ reward.label }}</p>
     </div>
   </div>
+
+  <div class="wishlist-container">
+    <div class="wishlist-header">
+      <div class="wishlist-icon"><ion-icon name="heart" size="medium"></ion-icon></div>
+      <h5>Wishlist Corner</h5>
+    </div>
+    <div class="wishlist-carousel-container">
+      <div class="wishlist-carousel" #carousel>
+        <div class="carousel-item" 
+             *ngFor="let voucher of wishlistVouchers; let i = index" 
+             [class.active]="i === activeIndex"
+             (click)="onVoucherClick(voucher)">
+          <p>{{ voucher.message }}</p>
+        </div>
+      </div>
+      <div class="carousel-indicators">
+        <span 
+          *ngFor="let voucher of wishlistVouchers; let i = index" 
+          class="indicator"
+          [class.active]="i === activeIndex"
+          (click)="activeIndex = i">
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <div class="available-rewards">
+    <h2>Available Rewards</h2>
+  </div>
+
   <div class="redeem-container">
     <app-redeem [filterTag]="selectedRewardTag"></app-redeem>
   </div>
+
   <div class="reminders-container">
     <app-reminders></app-reminders>
+  </div>
+
+  <div class="dialog-backdrop" 
+       *ngIf="showWishlistDialog" 
+       [class.fade-out]="isDialogClosing"
+       (click)="onDialogBackdropClick($event)">
+    <app-wishlist-form (formSubmit)="onFormSubmit()"></app-wishlist-form>
+  </div>
+
+  <div class="flash-message" 
+       *ngIf="showFlashMessage" 
+       [class.fade-in]="showFlashMessage"
+       [class.fade-out]="isFlashClosing"
+       (click)="hideFlashMessage()">
+    <span>You have added a wishlist!</span>
   </div>
 </ion-content>
