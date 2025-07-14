@@ -3,7 +3,6 @@ import { ModalController } from '@ionic/angular';
 import { WishlistService, WishlistItem, WishlistVoucher } from 'src/app/services/wishlist/wishlist.service';
 import { WishlistFormComponent } from 'src/app/shared/component/wishlist-form/wishlist-form.component';
 import Swiper from 'swiper';
-import { Pagination } from 'swiper/modules';
 
 @Component({
   selector: 'app-tab4',
@@ -56,14 +55,9 @@ export class Tab4Page implements OnInit, AfterViewInit, OnDestroy {
   initializeSwiper() {
     if (this.swiperContainer) {
       this.swiper = new Swiper(this.swiperContainer.nativeElement, {
-        modules: [Pagination],
         slidesPerView: 1,
         centeredSlides: true,
         spaceBetween: 20,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
         on: {
           slideChange: () => {
             if (this.swiper) {

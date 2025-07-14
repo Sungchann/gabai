@@ -1,5 +1,4 @@
 @import 'swiper/css';
-@import 'swiper/css/pagination';
 
 ion-content {
     // --background: rgb(207, 253, 204);
@@ -103,8 +102,7 @@ ion-content {
   
   .swiper {
     width: 100%;
-    min-height: 120px;
-    padding-bottom: 40px; // Space for pagination
+    height: max-content;
   }
   
   .swiper-slide {
@@ -113,29 +111,27 @@ ion-content {
     align-items: center;
     cursor: pointer;
   }
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #d1d5db;
+  transition: all 0.3s ease;
   
-  .swiper-pagination {
-    position: absolute;
-    bottom: 10px;
-    
-    .swiper-pagination-bullet {
-      width: 8px;
-      height: 8px;
-      background-color: #d1d5db;
-      opacity: 1;
-      transition: all 0.3s ease;
-      
-      &:hover {
-        background-color: #9ca3af;
-        transform: scale(1.2);
-      }
-      
-      &.swiper-pagination-bullet-active {
-        background-color: #7274ED;
-        transform: scale(1.3);
-        box-shadow: 0 0 8px rgba(114, 116, 237, 0.4);
-      }
-    }
+  &.active {
+    background-color: #7274ED;
+    transform: scale(1.3);
+    box-shadow: 0 0 8px rgba(114, 116, 237, 0.4);
   }
 }
 
@@ -456,4 +452,3 @@ ion-content {
 .wishlist-form-modal ion-content {
   --background: #ffffff;
 }
-
