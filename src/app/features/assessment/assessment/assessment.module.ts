@@ -7,13 +7,17 @@ import { IonicModule } from '@ionic/angular';
 import { AssessmentPageRoutingModule } from './assessment-routing.module';
 
 import { AssessmentPage } from './assessment.page';
+import { InputFormComponent } from 'src/app/shared/component/input-form/input-form.component';
+import { ButtonComponent } from 'src/app/shared/component/button/button.component';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AssessmentPageRoutingModule
+    AssessmentPageRoutingModule,
+    InputFormComponent,
+    ButtonComponent
   ],
   declarations: [AssessmentPage]
 })
