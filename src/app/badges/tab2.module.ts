@@ -7,6 +7,8 @@ import { ExploreContainerComponentModule } from '../explore-container/explore-co
 
 import { Tab2PageRoutingModule } from './tab2-routing.module';
 import { RemindersComponent } from "../shared/component/reminders/reminders.component";
+import { GrowthProgressComponent } from '../shared/component/growth-progress/growth-progress.component';
+import { BadgeComponent } from '../shared/component/badge/badge.component';
 
 @NgModule({
   imports: [
@@ -15,7 +17,9 @@ import { RemindersComponent } from "../shared/component/reminders/reminders.comp
     FormsModule,
     ExploreContainerComponentModule,
     Tab2PageRoutingModule,
-    RemindersComponent
+    RemindersComponent,
+    GrowthProgressComponent,
+    BadgeComponent
 ],
   declarations: [Tab2Page]
 })

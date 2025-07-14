@@ -3,6 +3,57 @@ ion-content {
 }
 
 .reminders-container{
+    margin: 20px;
+}
+
+.header {
+    margin-top: 30px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  background-color: #FFB256;
+  
+  ion-icon {
+    font-size: 26px;
+    color: white;
+  }
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.header h4 {
+    color: #333333;
+    font-weight: 600;
+    margin: 0;
+}
+
+.header p {
+    color: #333333;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.growth-progress-container {
     padding: 0 20px;
     margin-bottom: 20px;
+}
+
+.badges-list {
+    padding: 0 20px;
 }
