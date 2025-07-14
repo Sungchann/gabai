@@ -223,8 +223,21 @@ export class AssessmentService {
   }
 
   submitAssessment(formData: any): Observable<any> {
-    const features = this.processFormData(formData);
-    const payload = { features };
+    const featuresArray = this.processFormData(formData);
+    
+    // Create a named object instead of an array
+    const payload = { 
+      features: {
+        age: featuresArray[0],
+        gender: featuresArray[1],
+        family_structure: featuresArray[2],
+        screen_access: featuresArray[3],
+        access_level: featuresArray[4],
+        frequency_level: featuresArray[5],
+        content_level: featuresArray[6],
+        interactivity_level: featuresArray[7]
+      }
+    };
     
     console.log('Sending payload to API:', JSON.stringify(payload));
     

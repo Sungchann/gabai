@@ -13,6 +13,7 @@ import { RecentAdventuresComponent } from 'src/app/shared/component/recent-adven
 import { MoodTrackerComponent } from 'src/app/shared/component/mood-tracker/mood-tracker.component';
 import { BituinComponent } from 'src/app/shared/component/bituin/bituin.component';
 import { Tab1PageRoutingModule } from './tab1-routing.module';
+import { RemindersComponent } from "src/app/shared/component/reminders/reminders.component";
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import { Tab1PageRoutingModule } from './tab1-routing.module';
     RecentAdventuresComponent,
     MoodTrackerComponent,
     BituinComponent
-  ],
+    RemindersComponent
+   ],
   declarations: [Tab1Page]
 })
 export class Tab1PageModule {}
