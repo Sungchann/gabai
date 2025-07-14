@@ -1,4 +1,19 @@
 <ion-content [fullscreen]="true">
+  <div class="header">
+    <div class="icon-circle">
+      <ion-icon name="medal"></ion-icon>
+    </div>
+    <div class="header-content">
+      <h4>My Badges</h4>
+      <p>Your emotional growth journey</p>
+    </div>
+  </div>
+  <div class="growth-progress-container">
+    <app-growth-progress></app-growth-progress>
+  </div>
+  <div class="badges-list">
+    <app-badge></app-badge>
+  </div>
   <div class="reminders-container">
     <app-reminders></app-reminders>
   </div>
