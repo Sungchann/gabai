@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { IonicModule, ModalController } from '@ionic/angular';
 import { MoodTrackerService, Mood } from '../../../services/mood-tracker.service';
 
 @Component({
@@ -8,7 +9,7 @@ import { MoodTrackerService, Mood } from '../../../services/mood-tracker.service
   templateUrl: './mood-tracker.component.html',
   styleUrls: ['./mood-tracker.component.scss'],
   standalone: true,
-  imports: [CommonModule, FormsModule]
+  imports: [CommonModule, FormsModule, IonicModule]
 })
 export class MoodTrackerComponent implements OnInit {
   moods: Mood[] = [];
@@ -16,7 +17,10 @@ export class MoodTrackerComponent implements OnInit {
   userInput: string = '';
   username: string = '';
 
-  constructor(private moodService: MoodTrackerService) { }
+  constructor(
+    private moodService: MoodTrackerService,
+    private modalController: ModalController
+  ) { }
 
   ngOnInit(): void {
     this.moods = this.moodService.getMoods();
@@ -29,13 +33,26 @@ export class MoodTrackerComponent implements OnInit {
     this.selectedMood = mood;
   }
 
-  submitMood(): void {
+  async submitMood(): Promise<void> {
     if (this.selectedMood && this.userInput) {
-      console.log('Mood:', this.selectedMood.name, 'Comment:', this.userInput);
+      const moodData = {
+        mood: this.selectedMood.name,
+        comment: this.userInput
+      };
+      
+      console.log('Mood:', moodData.mood, 'Comment:', moodData.comment);
+      
+      // Close the modal with the data before resetting
+      await this.modalController.dismiss(moodData);
+      
       // Reset form after submission
       this.moods.forEach(m => m.selected = false);
       this.selectedMood = null;
       this.userInput = '';
     }
+  }
+
+  async closeModal(): Promise<void> {
+    await this.modalController.dismiss();
   }
 }

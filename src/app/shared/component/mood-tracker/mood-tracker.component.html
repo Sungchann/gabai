@@ -1,22 +1,37 @@
-<div class="main-container">
-  <div class="text">
-    <h2>Hey {{ username }},</h2>
-    <h2>how are you feeling today?</h2>
-  </div>
-  <div class="moods">
-    <div 
-      *ngFor="let mood of moods" 
-      class="mood-item" 
-      [class.selected]="mood.selected"
-      (click)="selectMood(mood)">
-      <img [src]="mood.svgPath" [alt]="mood.name">
-      <span>{{ mood.name }}</span>
+<!-- Modal Header -->
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-title>Daily Mood Check-in</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="closeModal()" fill="clear">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Modal Content -->
+<ion-content>
+  <div class="main-container">
+    <div class="text">
+      <h2>Hey {{ username }},</h2>
+      <h2>how are you feeling today?</h2>
+    </div>
+    <div class="moods">
+      <div 
+        *ngFor="let mood of moods" 
+        class="mood-item" 
+        [class.selected]="mood.selected"
+        (click)="selectMood(mood)">
+        <img [src]="mood.svgPath" [alt]="mood.name">
+        <span>{{ mood.name }}</span>
+      </div>
+    </div>
+    <div class="textbox">
+      <textarea placeholder="Say something..." rows="4" [(ngModel)]="userInput"></textarea>
+    </div>
+    <div class="button">
+      <button (click)="submitMood()" [disabled]="!selectedMood">Submit</button>
     </div>
   </div>
-  <div class="textbox">
-    <textarea placeholder="Say something..." rows="4" [(ngModel)]="userInput"></textarea>
-  </div>
-  <div class="button">
-    <button (click)="submitMood()" [disabled]="!selectedMood">Submit</button>
-  </div>
-</div>
+</ion-content>
