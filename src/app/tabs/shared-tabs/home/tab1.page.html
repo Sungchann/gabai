@@ -67,4 +67,19 @@
       <app-insight-highlight [desc]="currentChild.insight_description" [title]="currentChild.insight_name"></app-insight-highlight>
     </div>
   </div>
+
+<!-- Nudge Popup Dialog -->
+<div 
+  class="dialog-backdrop" 
+  *ngIf="showNudgeDialog" 
+  [class.fade-out]="isNudgeDialogClosing"
+  (click)="onNudgeBackdropClick($event)"
+>
+  <app-nudge 
+    [userId]="userId" 
+    (close)="closeNudgePopup()"
+  ></app-nudge>
+</div>
+
+
 </ion-content>

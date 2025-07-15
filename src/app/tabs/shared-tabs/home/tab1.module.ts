@@ -17,6 +17,7 @@ import { RemindersComponent } from "src/app/shared/component/reminders/reminders
 import { ButtonComponent } from 'src/app/shared/component/button/button.component';
 import { ChildProfileComponent } from 'src/app/shared/component/child-profile/child-profile.component';
 import { InsightHighlightComponent } from 'src/app/shared/component/insight-highlight/insight-highlight.component';
+import { NudgeComponent } from 'src/app/shared/component/nudge/nudge.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { InsightHighlightComponent } from 'src/app/shared/component/insight-high
     ButtonComponent,
     ChildProfileComponent,
     InsightHighlightComponent
+    NudgeComponent
    ],
   declarations: [Tab1Page]
 })

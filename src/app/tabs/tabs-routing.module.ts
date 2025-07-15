@@ -43,7 +43,16 @@ const routes: Routes = [
   {
     path: 'wishlist',
     loadChildren: () => import('./parent-tabs/wishlist/wishlist.module').then( m => m.WishlistPageModule)
+  },
+  {
+    path: 'chatbot',
+    loadChildren: () => import('./parent-tabs/chatbot/chatbot.module').then( m => m.ChatbotPageModule)
+  },
+  {
+    path: 'nudge',
+    loadChildren: () => import('./children-tabs/nudge/nudge.module').then( m => m.NudgePageModule)
   }
+
 
 
 ];

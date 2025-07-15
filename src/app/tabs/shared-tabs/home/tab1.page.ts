@@ -14,6 +14,9 @@ export class Tab1Page implements OnInit {
   logo: string = 'assets/icon/brand/gabai-small.svg';
   chatbotLogo: string = 'assets/icon/brand/gabai-chatbot.svg';
   currentChild: any = null;
+  userId = '1'; // or get this from auth
+  showNudgeDialog = false;
+  isNudgeDialogClosing = false;
 
   constructor(private modalController: ModalController, private authService: AuthService) {}
 
@@ -24,6 +27,10 @@ export class Tab1Page implements OnInit {
     this.authService.currentChild$.subscribe(child => {
       this.currentChild = child;
     });
+
+    setTimeout(() => {
+      this.showNudgeDialog = true;
+    }, 5000);
   }
 
   get isChild(): boolean {
@@ -37,6 +44,13 @@ export class Tab1Page implements OnInit {
 
   goToChildProfile(childId: string) {
     this.authService.setChild(childId);
+  }
+
+  
+  onNudgeBackdropClick(event: MouseEvent) {
+    if ((event.target as HTMLElement).classList.contains('dialog-backdrop')) {
+      this.closeNudgePopup();
+    }
   }
 
   private hasTrackedMoodToday(): boolean {
@@ -62,4 +76,16 @@ export class Tab1Page implements OnInit {
     return await modal.present();
   }
 
+  closeNudgePopup() {
+    this.isNudgeDialogClosing = true;
+    setTimeout(() => {
+      this.showNudgeDialog = false;
+      this.isNudgeDialogClosing = false;
+    }, 300); // match your fade-out animation duration
+  }
+
 }
+
+
+
+
