@@ -93,6 +93,34 @@ ion-content {
     color: #333333;
 }
 
+.parent-welcome-container {
+    margin: 0 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    padding: 20px;
+    border-radius: 26px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    color: #333333;
+}
+
+.parent-welcome-text {
+    width: 100%;
+    text-align: left;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.child-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
 .icon {
     background-color: #e4e4452f;
     border-radius: 20px;
@@ -141,4 +169,12 @@ p {
 
 .reminders-container{
     margin: 20px;
+}
+
+.child-container {
+    color: #333333;
+    padding: 0 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

@@ -1,0 +1,38 @@
+<div class="child-container">
+  <div class="rhythm">
+    Today's Digital Rhythm
+    <h1>Balanced</h1>
+  </div>
+
+  <div class="carousel-container">
+    <div class="screen-time-card card">
+      <h5>Screen Time</h5>
+      <div class="card-details">
+        <div class="detail-content">
+          <h3>{{ currentChild.screen_time.time }}</h3> - (today)
+        </div>
+        <h4>{{ currentChild.screen_time.percentage }}% vs. 83% average</h4>
+      </div>
+    </div>
+
+    <div class="sleep-card card">
+      <h5>Sleep</h5>
+      <div class="card-details">
+        <div class="detail-content">
+          <h3>{{ currentChild.sleep.time }}</h3>- (last night)
+        </div>
+        <h4>Quality: {{ currentChild.sleep.quality }}</h4>
+      </div>
+    </div>
+
+    <div class="activity-card card">
+      <h5>Activity</h5>
+      <div class="card-details">
+        <div class="detail-content">
+          <h3>{{ currentChild.activity.time }}</h3> - (today)
+        </div>
+        <h4>{{ currentChild.activity.completed }} <strong>micro-experiences</strong> completed</h4>
+      </div>
+    </div>
+  </div>
+</div>
