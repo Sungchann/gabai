@@ -25,7 +25,7 @@ import { RemindersComponent } from "src/app/shared/component/reminders/reminders
     AccessComponent,
     RecentAdventuresComponent,
     MoodTrackerComponent,
-    BituinComponent
+    BituinComponent,
     RemindersComponent
    ],
   declarations: [Tab1Page]
