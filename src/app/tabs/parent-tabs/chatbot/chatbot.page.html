@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/parent-tabs" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title class="title">Coach</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="chat-messages">
+  <div
+    *ngFor="let msg of messages"
+    [ngClass]="{
+      'message coach': msg.from === 'coach' && msg.text !== '...',
+      'message user': msg.from === 'user',
+      'message loading': msg.from === 'coach' && msg.text === '...'
+    }"
+  >
+    <div [innerHTML]="formatMessage(msg)"></div>
+  </div>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <div class="input-area">
+    <ion-input
+      [(ngModel)]="inputMessage"
+      (keyup.enter)="sendMessage()"
+      placeholder="Type your message..."
+      fill="outline"
+    ></ion-input>
+    <ion-button shape="round" (click)="sendMessage()">
+      <ion-icon slot="icon-only" name="send"></ion-icon>
+    </ion-button>
+  </div>
+</ion-footer>
