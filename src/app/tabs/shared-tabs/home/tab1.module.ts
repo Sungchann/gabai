@@ -14,6 +14,7 @@ import { MoodTrackerComponent } from 'src/app/shared/component/mood-tracker/mood
 import { BituinComponent } from 'src/app/shared/component/bituin/bituin.component';
 import { Tab1PageRoutingModule } from './tab1-routing.module';
 import { RemindersComponent } from "src/app/shared/component/reminders/reminders.component";
+import { NudgeComponent } from 'src/app/shared/component/nudge/nudge.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import { RemindersComponent } from "src/app/shared/component/reminders/reminders
     RecentAdventuresComponent,
     MoodTrackerComponent,
     BituinComponent,
-    RemindersComponent
+    RemindersComponent,
+    NudgeComponent
    ],
   declarations: [Tab1Page]
 })

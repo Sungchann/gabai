@@ -11,6 +11,9 @@ import { MoodTrackerComponent } from 'src/app/shared/component/mood-tracker/mood
 })
 export class Tab1Page implements OnInit {
   logo: string = 'assets/icon/brand/gabai-small.svg';
+  userId = '1'; // or get this from auth
+  showNudgeDialog = false;
+  isNudgeDialogClosing = false;
 
   constructor(private modalController: ModalController) {}
 
@@ -20,6 +23,17 @@ export class Tab1Page implements OnInit {
       setTimeout(() => {
         this.presentMoodTrackerModal();
       }, 1000); // Delay to ensure page is fully loaded
+    }
+
+    setTimeout(() => {
+      this.showNudgeDialog = true;
+    }, 5000);
+  }
+
+  
+  onNudgeBackdropClick(event: MouseEvent) {
+    if ((event.target as HTMLElement).classList.contains('dialog-backdrop')) {
+      this.closeNudgePopup();
     }
   }
 
@@ -47,4 +61,16 @@ export class Tab1Page implements OnInit {
     return await modal.present();
   }
 
+  closeNudgePopup() {
+    this.isNudgeDialogClosing = true;
+    setTimeout(() => {
+      this.showNudgeDialog = false;
+      this.isNudgeDialogClosing = false;
+    }, 300); // match your fade-out animation duration
+  }
+
 }
+
+
+
+

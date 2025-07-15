@@ -31,4 +31,19 @@
     <div class="reminders-container">
         <app-reminders></app-reminders>
       </div>
+
+<!-- Nudge Popup Dialog -->
+<div 
+  class="dialog-backdrop" 
+  *ngIf="showNudgeDialog" 
+  [class.fade-out]="isNudgeDialogClosing"
+  (click)="onNudgeBackdropClick($event)"
+>
+  <app-nudge 
+    [userId]="userId" 
+    (close)="closeNudgePopup()"
+  ></app-nudge>
+</div>
+
+
 </ion-content>

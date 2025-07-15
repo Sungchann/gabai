@@ -1,0 +1,147 @@
+:host {
+  font-family: 'Inter', sans-serif;
+
+
+  ion-toolbar {
+    --background: #1FA7E1;
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    ion-buttons[slot="start"],
+    ion-buttons[slot="end"] {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+    }
+
+    ion-buttons[slot="start"] {
+        left: 0;
+    }
+
+    ion-buttons[slot="end"] {
+        right: 0;
+    }
+    }
+
+
+  ion-content {
+    --background: #f7f9fc;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  ion-title.title {
+    text-align: center;
+    font-weight: 600;
+    width: 100%; // ensures it centers regardless of button presence
+    }
+
+
+  .chat-messages {
+    padding: 16px;
+    flex-grow: 1;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+
+    .message {
+      max-width: 80%;
+      margin-bottom: 12px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      word-wrap: break-word;
+    }
+
+    .user {
+      @extend .message;  // Extend base message styles
+      background-color: #1FA7E1;
+;
+      color: white;
+      align-self: flex-end;
+      margin-left: auto;
+      border-bottom-right-radius: 4px;
+    }
+
+    .coach {
+      @extend .message;  // Extend base message styles
+      background-color: #e2e8f0;
+      color: #333;
+      align-self: flex-start;
+      margin-right: auto;
+      border-bottom-left-radius: 4px;
+    }
+
+    .loading {
+      @extend .message;  // Extend base message styles
+      background-color: #e2e8f0;
+      color: #333;
+      align-self: flex-start;
+      margin-right: auto;
+      border-bottom-left-radius: 4px;
+    }
+
+    .message {
+        ul {
+            list-style: disc;
+            margin-left: 1.25rem;
+            padding-left: 0.5rem;
+        }
+
+        ol {
+            list-style: decimal;
+            margin-left: 1.25rem;
+            padding-left: 0.5rem;
+        }
+
+        strong {
+            font-weight: 600;
+        }
+
+        em {
+            font-style: italic;
+        }
+
+        p {
+            margin: 0 0 0.5rem;
+        }
+    }
+
+  }
+
+  .input-area {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: #fff;
+    border-top: 1px solid #e2e8f0;
+    gap: 12px;
+
+    ion-input {
+      flex-grow: 1;
+      font-size: 16px;
+      --padding-start: 16px;
+      --padding-end: 16px;
+      --padding-top: 12px;
+      --padding-bottom: 12px;
+      --border-radius: 24px;
+      --border-color: #cbd5e0;
+      --highlight-color: var(--ion-color-primary, #3b82f6);
+    }
+
+    ion-button {
+      --padding-start: 16px;
+      --padding-end: 16px;
+      --padding-top: 12px;
+      --padding-bottom: 12px;
+      --border-radius: 24px;
+      --background: #1FA7E1;
+      --background-hover: #2563eb;
+      --background-activated: #1d4ed8;
+      min-width: 48px;
+    }
+  }
+}
