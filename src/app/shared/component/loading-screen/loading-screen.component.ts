@@ -9,15 +9,12 @@ import { Router } from '@angular/router';
   imports: [] // Add required imports if this is a standalone component
 })
 export class LoadingScreenComponent implements OnInit {
-  @Input() redirectDelay: number = 2000; // Default to 2 seconds
-  @Input() redirectPath: string = '/tabs'; // Default to tabs path
 
   constructor(private router: Router) {}
-
+  
   ngOnInit() {
-    // Set timeout to navigate after specified delay
     setTimeout(() => {
-      this.router.navigateByUrl(this.redirectPath);
-    }, this.redirectDelay);
+      this.router.navigate(['/tabs/tabs/tab1']);
+    }, 2100); // 1.8s animation + 0.3s delay
   }
 }
