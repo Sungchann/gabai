@@ -1,36 +1,72 @@
 <ion-content [fullscreen]="true">
+  <div *ngIf="isChild">
     <div class="header">
-        <div class="header-content">
-            <div class="logo-circle">
-                <a href="" class="logo-link">
-                    <img [src]="logo" alt="Gabai Logo" class="logo">
-                </a>
-            </div>
-            <div class="header-text">
-                <div>Kamusta</div>
-                <div class="name">Maria! 🌟</div>
-            </div>
+      <div class="header-content">
+        <div class="logo-circle">
+          <a href="" class="logo-link">
+            <img [src]="logo" alt="Gabai Logo" class="logo" />
+          </a>
         </div>
-        <app-bituin [bituins]="276"></app-bituin>
+        <div class="header-text">
+          <div>Kamusta</div>
+          <div class="name">Maria! 🌟</div>
+        </div>
+      </div>
+      <app-bituin [bituins]="276"></app-bituin>
     </div>
     <div class="welcome-container">
-        <div class="icon">
-            🌈
-        </div>
-        <div class="welcome-text">
-            <h5>Welcome back, little star!</h5>
-            <p>Ready for another day of amazing discoveries?</p>
-        </div>
+      <div class="icon">🌈</div>
+      <div class="welcome-text">
+        <h5>Welcome back, little star!</h5>
+        <p>Ready for another day of amazing discoveries?</p>
+      </div>
     </div>
     <div class="actions-container">
-        <app-access></app-access>
+      <app-access></app-access>
     </div>
     <div class="recent-activities-container">
-        <app-recent-adventures></app-recent-adventures>
+      <app-recent-adventures></app-recent-adventures>
     </div>
     <div class="reminders-container">
-        <app-reminders></app-reminders>
+      <app-reminders></app-reminders>
+    </div>
+  </div>
+  <div *ngIf="!isChild">
+    <div class="header">
+      <div class="header-content">
+        <div class="logo-circle">
+          <a href="" class="logo-link">
+            <img [src]="logo" alt="Gabai Logo" class="logo" />
+          </a>
+        </div>
+        <div class="header-text">
+          <div>Kamusta</div>
+          <div class="name">Papa James!</div>
+        </div>
       </div>
+
+      <app-button icon="chatbubble" color="blue"></app-button>
+    </div>
+    <div class="parent-welcome-container">
+      <div class="parent-welcome-text">
+        <h5>Daily Snapshot</h5>
+      </div>
+      <div class="child-info">
+        <app-button
+          [color]="child.color"
+          [label]="child.name"
+          (click)="goToChildProfile(child.id)"
+          size="medium"
+          [inactive]="child !== currentChild"
+          *ngFor="let child of children"
+        ></app-button>
+      </div>
+    </div>
+    <div class="child-container">
+      <app-child-profile [currentChild]="currentChild"></app-child-profile>
+      <app-insight-highlight [desc]="currentChild.insight_description" [title]="currentChild.insight_name"></app-insight-highlight>
+    </div>
+  </div>
 
 <!-- Nudge Popup Dialog -->
 <div 

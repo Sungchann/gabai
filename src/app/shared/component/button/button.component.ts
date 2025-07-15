@@ -1,12 +1,13 @@
 import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, IonicModule]
 })
 export class ButtonComponent implements OnInit {
 
@@ -14,12 +15,14 @@ export class ButtonComponent implements OnInit {
 
   ngOnInit() {}
 
-  @Input() label: string = 'Click Me';
+  @Input() label: any = 'Click Me';
+  @Input() icon: string = '';
   @Input() color: 'blue' | 'green' | 'purple' | 'red' | 'orange' | 'white' = 'white';
   @Input() textColor: string = 'white';
   @Input() size: 'small' | 'medium' | 'large' = 'medium';
   @Input() disabled: boolean = false;
   @Input() type: 'button' | 'submit' | 'reset' = 'button';
+  @Input() inactive: boolean = false;
 
   @Output() buttonClick = new EventEmitter<Event>();
   @Output() buttonHover = new EventEmitter<Event>();

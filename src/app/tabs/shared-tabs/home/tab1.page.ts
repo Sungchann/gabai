@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 // import { MoodTrackerComponent } from '../shared/component/mood-tracker/mood-tracker.component';
 import { MoodTrackerComponent } from 'src/app/shared/component/mood-tracker/mood-tracker.component';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-tab1',
@@ -11,23 +12,37 @@ import { MoodTrackerComponent } from 'src/app/shared/component/mood-tracker/mood
 })
 export class Tab1Page implements OnInit {
   logo: string = 'assets/icon/brand/gabai-small.svg';
+  chatbotLogo: string = 'assets/icon/brand/gabai-chatbot.svg';
+  currentChild: any = null;
   userId = '1'; // or get this from auth
   showNudgeDialog = false;
   isNudgeDialogClosing = false;
 
-  constructor(private modalController: ModalController) {}
+  constructor(private modalController: ModalController, private authService: AuthService) {}
 
   ngOnInit() {
-    // Check if mood has been tracked today
     if (!this.hasTrackedMoodToday()) {
-      setTimeout(() => {
-        this.presentMoodTrackerModal();
-      }, 1000); // Delay to ensure page is fully loaded
+      this.presentMoodTrackerModal();
     }
+    this.authService.currentChild$.subscribe(child => {
+      this.currentChild = child;
+    });
 
     setTimeout(() => {
       this.showNudgeDialog = true;
     }, 5000);
+  }
+
+  get isChild(): boolean {
+    return this.authService.role === 'child';
+  }
+
+  get children(): any[] {
+    return this.authService.children;
+  }
+
+  goToChildProfile(childId: string) {
+    this.authService.setChild(childId);
   }
 
   
@@ -52,7 +67,6 @@ export class Tab1Page implements OnInit {
 
     modal.onDidDismiss().then((result) => {
       if (result.data) {
-        // Save that mood was tracked today
         localStorage.setItem('lastMoodTracked', new Date().toDateString());
         console.log('Mood tracked:', result.data);
       }

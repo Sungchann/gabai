@@ -27,6 +27,7 @@ const routes: Routes = [
         path: 'tab5',
         loadChildren: () => import('./shared-tabs/family/tab5.module').then(m => m.Tab5PageModule)
       },
+      
       {
         path: '',
         redirectTo: '/tabs/tab1',
@@ -40,6 +41,10 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'wishlist',
+    loadChildren: () => import('./parent-tabs/wishlist/wishlist.module').then( m => m.WishlistPageModule)
+  },
+  {
     path: 'chatbot',
     loadChildren: () => import('./parent-tabs/chatbot/chatbot.module').then( m => m.ChatbotPageModule)
   },
@@ -47,6 +52,8 @@ const routes: Routes = [
     path: 'nudge',
     loadChildren: () => import('./children-tabs/nudge/nudge.module').then( m => m.NudgePageModule)
   }
+
+
 
 ];
 

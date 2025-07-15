@@ -1,0 +1,234 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 20px;
+    width: 100%;
+    margin-top: 30px;
+    background-color: transparent;
+}
+
+.header-container{
+    display: flex;
+    flex-direction: row;
+    padding: 20px 15px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 10px;
+    width: 100%;
+    backdrop-filter: blur(5px);
+    border-radius: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    max-width: 400px;
+}
+
+
+.icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(117, 208, 106, 0.8);
+    margin-right: 15px;
+  
+  ion-icon {
+    font-size: 26px;
+    color: white;
+  }
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.header h4 {
+    color: #333333;
+    font-weight: 600;
+    margin: 0;
+}
+
+.header p {
+    color: #333333;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.available-rewards {
+    padding: 0 20px;
+
+    h2 {
+        font-weight: bold;
+        font-size: 18px;
+        color: #333333;
+    }
+}
+
+.wishlist-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px; 
+    padding: 24px; 
+    width: 100%;
+  }
+  
+  .wishitem-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 0; 
+    padding: 12px; 
+    border-radius: 25px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-style: solid;
+    border-width: 1px 1px 5px 1px; 
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    .container {
+      display: flex;
+      padding: 16px; 
+      width: 100%; 
+    }
+    
+    .icon {
+      font-size: 36px; 
+      margin-right: 16px; 
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 60px;
+      width: 60px;  
+      height: 60px; 
+      background-color: rgba(255, 255, 255, 0.3); 
+      border-radius: 8px; 
+      flex-shrink: 0; 
+    }
+    
+    .contents {
+      flex: 1;
+      // display: flex;
+      flex-direction: column;
+      justify-content: space-between; 
+      // min-height: 120px; 
+    }
+    
+    .item-title {
+      font-size: 18px; 
+      font-weight: 700;
+      color: white; 
+      margin-bottom: 8px; 
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+      line-height: 1.3; 
+    }
+    
+    .item-details {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.9); 
+      margin-bottom: 10px;
+      line-height: 1.4; 
+    }
+    
+    .points-redeem {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      // padding-top: 8px; 
+    }
+    
+    .points {
+      font-size: 14px;
+      font-weight: 600;
+      color: white;
+      // padding-top: 6px;
+      white-space: nowrap; 
+      overflow: hidden; 
+      text-overflow: ellipsis;
+    }
+    
+    .redeem-button {
+      background-color: white !important; 
+      color: #8e8b8b; 
+      border-radius: 6px;
+      padding: 8px 14px; 
+      font-weight: 600;
+      cursor: pointer;
+      border-bottom: 3px solid #CACACA; 
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      // margin-top: 5px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .wishlist-container {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      padding: 15px;
+    }
+    
+    .wishitem-card .container {
+      padding: 15px;
+    }
+    
+    .icon {
+      font-size: 32px;
+      min-width: 50px;
+      width: 50px;  
+      height: 50px; 
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .wishlist-container {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 10px;
+    }
+    
+    .points-redeem {
+      flex-direction: row; 
+      justify-content: space-between; 
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap; 
+    }
+    
+    .points {
+      min-width: 60px; 
+    }
+    
+    .redeem-button {
+      padding: 8px 12px; 
+    }
+  }
+
+
+  .redeem-button {
+  padding: 6px 12px;
+  background-color: #1FA7E1;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.redeem-button:hover:not(:disabled) {
+  background-color: #178fc0;
+}
+
+.redeem-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.wishitem-card.redeemed {
+  opacity: 0.7; 
+  pointer-events: none; 
+  transition: opacity 0.3s ease;
+}

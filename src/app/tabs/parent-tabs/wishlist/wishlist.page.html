@@ -1,0 +1,39 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <div class="header-container">
+      <div class="icon-circle">
+        <ion-icon name="gift-outline"></ion-icon>
+      </div>
+      <div class="header-content">
+        <h4>Anak's Wishlist</h4>
+        <p>A list of wishlist</p>
+      </div>
+    </div>
+  </div>
+  <div class="available-rewards">
+    <h2>Gift Lists</h2>
+  </div>
+  <div class="wishlist-container">
+    <div class="wishitem-card" 
+      *ngFor="let item of wishlistItems"
+      [style.background-color]="item.color"
+      [style.border-color]="item.border"
+    >
+      <!-- [style.background-color]="item.color" -->
+      <div class="container">
+        <div class="icon">{{ item.emoji }}</div>
+        <div class="contents">
+          <div class="item-title">{{ item.name }}</div>
+          <div class="item-details">{{ item.description }}</div>
+          <div class="points-redeem">
+            <div class="points">{{ item.kid }}</div>
+            <button class="redeem-button" (click)="redeemReward(item)" [disabled]="item.gift"
+              [ngClass]="{ 'redeemed': item.gift }">
+              {{ item.gift ? 'Gift sent!' : 'Give gift' }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-content>

@@ -1,8 +1,9 @@
-<button class="{{ color }} {{ size }} text-{{ textColor }}"
+<button class="{{ color }} {{ size }} {{inactive ? 'white' : ''}} text-{{ textColor }}"
         [disabled]="disabled"
         [ngClass]="{
           'cursor-not-allowed': disabled,
           'opacity-50': disabled
         }">
-  {{ label }}
-</button> 
+  <p *ngIf="label !== 'Click Me'">{{label}}</p>
+  <ion-icon *ngIf="icon" [name]="icon" class="chatbot" size="large"></ion-icon>
+</button>
