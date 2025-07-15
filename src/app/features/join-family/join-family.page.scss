@@ -1,0 +1,44 @@
+.join-family-container{
+    margin-top: 15%;
+}
+.get-started-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100%;
+    color: #1FA7E1;
+    padding-bottom: 30px;
+}
+
+h1 {
+    font-size: 37px;
+    font-weight: 900;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.exist-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+    margin-top: 15%;
+}
+
+.create-button{
+    margin-top: 10px;
+}
+p{
+    // margin-left: 10%;
+    margin-bottom: 2px;
+}
+.nav-button{
+    display: flex;
+    justify-content: center;
+}

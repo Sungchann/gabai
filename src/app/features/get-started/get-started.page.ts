@@ -15,6 +15,6 @@ export class GetStartedPage implements OnInit {
   }
 
   navigateToNext() {
-    this.router.navigate(['/assessment']);
+    this.router.navigate(['/get-started-two']);
   }
 }

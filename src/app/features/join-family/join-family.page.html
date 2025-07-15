@@ -1,0 +1,19 @@
+<ion-content [fullscreen]="true">
+  <div class="join-family-container">
+    <div class="get-started-container">
+      <div class="create-container">
+        <h1>Create a new family profile!</h1>
+        <app-input-form [label]="'Family Profile Name'" [type]="'text'" [placeholder]="'QUJ123'"
+          (valueChange)="onInputChange($event)"></app-input-form>
+        <app-button label="Create Family Profile" (click)="navigateToCreateFam()" color="blue" size="large"
+          class="nav-button create-button"></app-button>
+      </div>
+
+      <div class="exist-container">
+        <p>Already have a family profile?</p>
+        <app-button label="Join an existing family profile" (click)="navigateToJoinFam()" color="white" size="large" textColor="gray"
+          class="nav-button"></app-button>
+      </div>
+    </div>
+  </div>
+</ion-content>
