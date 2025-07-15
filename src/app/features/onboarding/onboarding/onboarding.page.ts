@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-onboarding',
@@ -9,16 +10,18 @@ import { Router } from '@angular/router';
 })
 export class OnboardingPage implements OnInit {
 
-  constructor(private router:Router) { }
+  constructor(private router:Router, private authService: AuthService) { }
 
   ngOnInit() {
   }
 
   navigateToJoinFamily() {
-    this.router.navigate(['/onboarding']);
+    this.authService.role = 'parent'; // Set default role to parent
+    this.router.navigate(['/tabs/tabs/tab1']);
   }
 
   navigateToAssessment(){
+    this.authService.role = 'child'; // Set default role to parent
     this.router.navigate(['/assessment']);
   }
 

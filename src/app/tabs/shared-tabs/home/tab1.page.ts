@@ -27,6 +27,7 @@ export class Tab1Page implements OnInit {
   }
 
   get isChild(): boolean {
+    console.log('Current role:', this.authService.role);
     return this.authService.role === 'child';
   }
 
