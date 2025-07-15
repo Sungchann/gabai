@@ -54,10 +54,6 @@ export class MoodTrackerComponent implements OnInit {
     }
   }
 
-  navigateToHome() {
-    this.router.navigate(['/tabs/tabs/tab1']);
-  }
-
   async closeModal(): Promise<void> {
     await this.modalController.dismiss();
   }
