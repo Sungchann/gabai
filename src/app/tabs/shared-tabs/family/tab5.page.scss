@@ -8,6 +8,74 @@ ion-content {
     margin-top: 20px;
 }
 
+.header-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 20px;
+  width: 100%;
+  margin-top: 30px;
+  background-color: transparent;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;  
+  padding: 20px 15px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 10px;
+  width: 100%;
+  backdrop-filter: blur(5px);
+  border-radius: 25px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  max-width: 400px;
+}
+
+.icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(153, 86, 222, 0.8); 
+  margin-right: 15px;
+}
+
+.icon {
+  color: #fff;
+  font-size: 24px;
+}
+
+.settings-icon {
+  margin-left: 70px;
+  color: #666666;
+  font-size: 30px;
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #333333;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #666666;
+    font-weight: normal;
+}
+
+
 .mood-chart-container {
   padding: 24px;
   background: #fff;

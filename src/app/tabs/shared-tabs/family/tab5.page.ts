@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab5',
@@ -18,7 +19,7 @@ export class Tab5Page {
   ];
 
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   getMoodColor(score: number): string {
     if (score >= 9) return '#7274ED';     
@@ -27,4 +28,7 @@ export class Tab5Page {
     return '#F44336';    
   }
 
+  navigateToOnboarding() {
+    this.router.navigate(['/onboarding']);
+  }
 }

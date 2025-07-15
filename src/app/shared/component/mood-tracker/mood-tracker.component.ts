@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ModalController } from '@ionic/angular';
 import { MoodTrackerService, Mood } from '../../../services/mood-tracker.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-mood-tracker',
@@ -19,7 +20,8 @@ export class MoodTrackerComponent implements OnInit {
 
   constructor(
     private moodService: MoodTrackerService,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
