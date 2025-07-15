@@ -38,9 +38,14 @@ const routes: Routes = [
     path: '',
     redirectTo: '/tabs/tab1',
     pathMatch: 'full'
-  },  {
+  },
+  {
     path: 'chatbot',
     loadChildren: () => import('./parent-tabs/chatbot/chatbot.module').then( m => m.ChatbotPageModule)
+  },
+  {
+    path: 'nudge',
+    loadChildren: () => import('./children-tabs/nudge/nudge.module').then( m => m.NudgePageModule)
   }
 
 ];
