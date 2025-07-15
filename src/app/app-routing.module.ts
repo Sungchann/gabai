@@ -41,8 +41,11 @@ const routes: Routes = [
   {
     path: 'join-family',
     loadChildren: () => import('./features/join-family/join-family.module').then( m => m.JoinFamilyPageModule)
+  },
+  {
+    path: 'wishlist',
+    loadChildren: () => import('./tabs/parent-tabs/wishlist/wishlist.module').then( m => m.WishlistPageModule)
   }
-
 
 ];
 @NgModule({

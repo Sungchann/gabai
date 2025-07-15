@@ -27,6 +27,7 @@ const routes: Routes = [
         path: 'tab5',
         loadChildren: () => import('./shared-tabs/family/tab5.module').then(m => m.Tab5PageModule)
       },
+      
       {
         path: '',
         redirectTo: '/tabs/tab1',
@@ -38,7 +39,13 @@ const routes: Routes = [
     path: '',
     redirectTo: '/tabs/tab1',
     pathMatch: 'full'
+  },
+  {
+    path: 'wishlist',
+    loadChildren: () => import('./parent-tabs/wishlist/wishlist.module').then( m => m.WishlistPageModule)
   }
+
+
 ];
 
 @NgModule({

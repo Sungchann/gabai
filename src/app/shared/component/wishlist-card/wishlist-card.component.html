@@ -1,0 +1,27 @@
+<div class="rewards-container">
+  <div class="reward-card"
+       *ngFor="let item of filteredItems"
+       [style.background-color]="item.color"
+       [style.border-color]="item.border"
+       [ngClass]="{ 'redeemed': item.redeemed }">
+       
+    <div class="container">
+      <div class="icon">{{ item.emoji }}</div>
+      <div class="contents">
+        <div class="reward-title">{{ item.title }}</div>
+        <div class="reward-details">{{ item.description }}</div>
+
+        <div class="points-redeem">
+          <div class="points"><i class="far fa-star"></i> {{ item.points }} points</div>
+          <button
+            class="redeem-button"
+            (click)="redeemReward(item)"
+            [disabled]="item.redeemed"
+            [ngClass]="{ 'redeemed': item.redeemed }">
+            {{ item.redeemed ? 'Redeemed!' : 'Redeem' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
