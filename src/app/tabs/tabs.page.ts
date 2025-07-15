@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-tabs',
@@ -6,8 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['tabs.page.scss'],
   standalone: false,
 })
-export class TabsPage {
+export class TabsPage implements OnInit {
+  role: string = '';
+  constructor(private authService: AuthService) {}
 
-  constructor() {}
-
+  ngOnInit(): void {
+    this.role = this.authService.role;
+  }
 }

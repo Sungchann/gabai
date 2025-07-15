@@ -13,7 +13,7 @@ export class ChatbotPage implements OnInit {
   loadingMessageIndex: number | null = null;
   messages: { from: 'user' | 'coach', text: string }[] = [];
   inputMessage = '';
-  userId = 1; // or get this dynamically from your auth context
+  userId = 2; // or get this dynamically from your auth context
   private markdownConverter: showdown.Converter;
 
 
@@ -54,7 +54,7 @@ export class ChatbotPage implements OnInit {
       this.messages.push({ from: 'coach', text: '...' });
       this.loadingMessageIndex = this.messages.length - 1;
 
-      this.http.post<{ response: string }>('http://127.0.0.1:8000/api/chat/', payload).subscribe({
+      this.http.post<{ response: string }>('https://3s5q2zvk-8000.asse.devtunnels.ms/api/chat/', payload).subscribe({
         next: (res) => {
           if (this.loadingMessageIndex !== null) {
             // Replace loading message with the actual response

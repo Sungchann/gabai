@@ -32,26 +32,21 @@ const routes: Routes = [
         path: '',
         redirectTo: '/tabs/tab1',
         pathMatch: 'full'
+      },
+      {
+        path: 'wishlist',
+        loadChildren: () => import('./parent-tabs/wishlist/wishlist.module').then( m => m.WishlistPageModule)
+      },
+      {
+        path: 'chatbot',
+        loadChildren: () => import('./parent-tabs/chatbot/chatbot.module').then( m => m.ChatbotPageModule)
+      },
+      {
+        path: 'nudge',
+        loadChildren: () => import('./children-tabs/nudge/nudge.module').then( m => m.NudgePageModule)
       }
     ]
   },
-  {
-    path: '',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
-  },
-  {
-    path: 'wishlist',
-    loadChildren: () => import('./parent-tabs/wishlist/wishlist.module').then( m => m.WishlistPageModule)
-  },
-  {
-    path: 'chatbot',
-    loadChildren: () => import('./parent-tabs/chatbot/chatbot.module').then( m => m.ChatbotPageModule)
-  },
-  {
-    path: 'nudge',
-    loadChildren: () => import('./children-tabs/nudge/nudge.module').then( m => m.NudgePageModule)
-  }
 
 
 

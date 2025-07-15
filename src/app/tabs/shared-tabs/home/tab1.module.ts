@@ -33,7 +33,7 @@ import { NudgeComponent } from 'src/app/shared/component/nudge/nudge.component';
     RemindersComponent,
     ButtonComponent,
     ChildProfileComponent,
-    InsightHighlightComponent
+    InsightHighlightComponent,
     NudgeComponent
    ],
   declarations: [Tab1Page]

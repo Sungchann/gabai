@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class NudgeService {
-  private apiUrl = 'http://127.0.0.1:8000/api/predict/';
+  private apiUrl = 'https://3s5q2zvk-8000.asse.devtunnels.ms/api/predict/';
 
   constructor(private http: HttpClient) {}
 
