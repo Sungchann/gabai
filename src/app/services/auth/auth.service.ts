@@ -89,6 +89,9 @@ export class AuthService implements OnInit {
   private _currentChild = new BehaviorSubject<any>(this.children[0]);
   currentChild$ = this._currentChild.asObservable();
 
+  private _role = new BehaviorSubject<any>('child');
+  role$ = this._role.asObservable();
+
   ngOnInit() {
     // this._currentChild.next(this.children[0]);
     console.log('AuthService initialized with first child:', this.children[0]);
@@ -101,5 +104,9 @@ export class AuthService implements OnInit {
     if (child) {
       this._currentChild.next(child);
     }
+  }
+
+  setRole(role: string) {
+    this._role.next(role);
   }
 }

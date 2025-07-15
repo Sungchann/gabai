@@ -18,11 +18,15 @@ export class OnboardingPage implements OnInit {
   navigateToJoinFamily() {
     this.authService.role = 'parent'; // Set default role to parent
     this.router.navigate(['/tabs/tabs/tab1']);
+    this.authService.setRole('parent'); // Ensure role is set in AuthService
   }
 
   navigateToAssessment(){
     this.authService.role = 'child'; // Set default role to parent
     this.router.navigate(['/assessment']);
+    this.authService.setRole('child'); // Ensure role is set in AuthService
   }
+
+
 
 }
