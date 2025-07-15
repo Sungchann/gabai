@@ -4,6 +4,10 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
+    loadChildren: () => import('./features/splash-screen/splash-screen.module').then( m => m.SplashScreenPageModule)
+  },
+  {
+    path: 'tabs',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
   {
@@ -33,7 +37,8 @@ const routes: Routes = [
   {
     path: 'get-started-two',
     loadChildren: () => import('./features/get-started-two/get-started-two.module').then( m => m.GetStartedTwoPageModule)
-  },  {
+  },
+  {
     path: 'join-family',
     loadChildren: () => import('./features/join-family/join-family.module').then( m => m.JoinFamilyPageModule)
   }

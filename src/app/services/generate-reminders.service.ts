@@ -15,6 +15,14 @@ export interface Reminder {
 export class GenerateRemindersService {
   private reminders: Reminder[] = [
     {
+      route: "tabs/tab1",
+      icon: "sunny-outline",
+      background: "rgb(153, 86, 222)",
+      title: "You Shine Bright!",
+      message: "Your kindness, curiosity, and courage light the way for others. Keep shining and exploring the world with your amazing heart!",
+      emoji: "✨"
+    },
+    {
       route: "tabs/tab2",
       icon: "heart-outline",
       background: "rgb(117, 208, 106)",

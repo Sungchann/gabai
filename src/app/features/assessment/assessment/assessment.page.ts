@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AssessmentService } from 'src/app/services/assessment/assessment.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-assessment',
@@ -12,7 +13,10 @@ export class AssessmentPage implements OnInit {
   formSections: any[] = []
   formData: { [key: string]: any } = {};
 
-  constructor(private asessmentService: AssessmentService) { }
+  constructor(
+    private asessmentService: AssessmentService,
+    private router: Router 
+  ) { }
 
   ngOnInit() {
     this.formSections = this.asessmentService.getAssessmentSections();
@@ -29,6 +33,8 @@ export class AssessmentPage implements OnInit {
   onClick() {
     if (this.isLastSection()) {
       this.submitForm();
+      // Navigate to loading-screen component
+      this.router.navigateByUrl('/loading-test');
     } else {
       this.sectionIndex++;
     }
@@ -40,16 +46,25 @@ export class AssessmentPage implements OnInit {
 
   submitForm() {
     console.log('Form submitted!');
-    this.asessmentService.submitAssessment(this.formData)
-      .subscribe(
-        (response) => {
-          console.log('Prediction results:', response);
-          // Handle the response (e.g., navigate to results page with data)
-        },
-        (error) => {
-          console.error('Error getting prediction:', error);
-          // Handle error (show error message, etc.)
-        }
-      );
+    
+    // Store form data locally before navigation
+    const submittedData = {...this.formData};
+    
+    // Process in background after navigating to loading screen
+    setTimeout(() => {
+      this.asessmentService.submitAssessment(submittedData)
+        .subscribe(
+          (response) => {
+            console.log('Prediction results:', response);
+            // Navigate to results page after processing
+            // this.router.navigateByUrl('/results');
+          },
+          (error) => {
+            console.error('Error getting prediction:', error);
+            // Handle error - navigate to error page or back to form
+            // this.router.navigateByUrl('/error');
+          }
+        );
+    }, 100);
   }
 }

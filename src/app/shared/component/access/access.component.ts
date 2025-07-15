@@ -20,6 +20,6 @@ export class AccessComponent  implements OnInit {
   }
 
   navigateTo(route: string): void {
-    this.accessService.navigateTo(route);
+    this.accessService.navigateTo("/tabs" + route);
   }
 }
