@@ -9,6 +9,7 @@ import { ExploreContainerComponentModule } from '../../../explore-container/expl
 import { Tab5PageRoutingModule } from './tab5-routing.module';
 import { RemindersComponent } from "../../../shared/component/reminders/reminders.component";
 import { FamilyLeaderboardComponent } from '../../../shared/component/family-leaderboard/family-leaderboard.component';
+import { BituinComponent } from "src/app/shared/component/bituin/bituin.component";
 
 @NgModule({
   imports: [
@@ -18,7 +19,8 @@ import { FamilyLeaderboardComponent } from '../../../shared/component/family-lea
     ExploreContainerComponentModule,
     Tab5PageRoutingModule,
     RemindersComponent,
-    FamilyLeaderboardComponent
+    FamilyLeaderboardComponent,
+    BituinComponent
 ],
   declarations: [Tab5Page]
 })

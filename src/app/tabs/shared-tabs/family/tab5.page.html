@@ -1,5 +1,18 @@
 <ion-content [fullscreen]="true">
-
+  <div class="header-container">
+    <div class="page-title">
+      <div class="icon-circle">
+        <ion-icon name="people-outline" class="icon" size="large"></ion-icon>
+      </div>
+      <div class="texts">
+        <div class="title">Family Dashboard</div>
+        <div class="subtitle">Your family's wellness journey</div>
+      </div>
+      <div class="settings">
+        <ion-icon name="settings-outline" class="settings-icon"></ion-icon>      
+      </div>
+    </div>
+  </div>
   <app-family-leaderboard [familyKey]="'QUJ123'"></app-family-leaderboard>
 
   <div class="mood-chart-container">

@@ -15,7 +15,7 @@ export interface Reminder {
 export class GenerateRemindersService {
   private reminders: Reminder[] = [
     {
-      route: "tabs/tab1",
+      route: "tabs/tabs/tab1",
       icon: "sunny-outline",
       background: "rgb(153, 86, 222)",
       title: "You Shine Bright!",
@@ -23,7 +23,7 @@ export class GenerateRemindersService {
       emoji: "✨"
     },
     {
-      route: "tabs/tab2",
+      route: "tabs/tabs/tab2",
       icon: "heart-outline",
       background: "rgb(117, 208, 106)",
       title: "You're Amazing!",
@@ -31,7 +31,7 @@ export class GenerateRemindersService {
       emoji: "💚"
     },
     {
-      route: "tabs/tab3",
+      route: "tabs/tabs/tab3",
       icon: "gift-outline",
       background: "rgb(255, 139, 139)",
       title: "You're a Gift to Your Family!",
@@ -39,7 +39,7 @@ export class GenerateRemindersService {
       emoji: "✨"
     },
     {
-      route: "tabs/tab4",
+      route: "tabs/tabs/tab4",
       icon: "star-outline",
       background: "rgb(82, 96, 255)",
       title: "You're Earning Amazing Rewards!",
@@ -47,7 +47,7 @@ export class GenerateRemindersService {
       emoji: "🌟"
     },
     {
-      route: "tabs/tab5",
+      route: "tabs/tabs/tab5",
       icon: "sparkles-outline",
       background: "rgb(242, 192, 86)",
       title: "Beautiful Progress!",
